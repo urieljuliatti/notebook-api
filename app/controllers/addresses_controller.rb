@@ -25,10 +25,13 @@ class AddressesController < ApplicationController
   def destroy
     @contact.address.destroy
   end
+
   private
+
   def set_contact
     @contact = Contact.find(params[:contact_id])
   end
+
   def address_params
     ActiveModelSerializers::Deserialization.jsonapi_parse(params)
   end
